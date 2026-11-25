@@ -1,0 +1,22 @@
+{
+  "name": "nexus-erp-application-systems-suite",
+  "version": "1.0.0",
+  "description": "Enterprise ERP Integration, Invoicing & Systems Management Hub - Specially engineered for Application Systems Specialist (Ref: WIN260818-1, Windhoek, Namibia)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "erp",
+    "systems-specialist",
+    "itil",
+    "cobit",
+    "invoice-management",
+    "middleware",
+    "data-cleansing",
+    "sql-plsql"
+  ],
+  "author": "Application Systems Specialist Candidate",
+  "license": "MIT"
+}

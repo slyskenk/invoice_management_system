@@ -1,0 +1,233 @@
+/* Dashboard Grid */
+.dashboard-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.dashboard-split {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .dashboard-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Topology Diagram Box */
+.topology-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.topology-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.topology-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.topology-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  position: relative;
+  padding: 10px 0;
+}
+
+.topo-node {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.topo-node:hover {
+  transform: translateY(-3px);
+  border-color: var(--cyan-accent);
+  box-shadow: var(--shadow-cyan-glow);
+}
+
+.topo-node-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topo-node-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.topo-node-tech {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--cyan-accent);
+}
+
+.topo-node-stat {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 6px;
+}
+
+/* Service Health Card */
+.service-health-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: background 0.2s;
+}
+
+.service-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.service-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--emerald-success);
+  box-shadow: 0 0 8px var(--emerald-success);
+}
+
+.service-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.service-type {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.service-stats {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.service-latency {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--cyan-accent);
+}
+
+/* Real-Time Live Bus Log / Stream */
+.terminal-window {
+  background: #06090F;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  font-family: var(--font-mono);
+}
+
+.terminal-header {
+  background: #0B111D;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-red { background: #EF4444; }
+.dot-yellow { background: #F59E0B; }
+.dot-green { background: #10B981; }
+
+.terminal-title {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.terminal-body {
+  padding: 14px 18px;
+  max-height: 220px;
+  overflow-y: auto;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: #A5B4FC;
+}
+
+.log-entry {
+  display: flex;
+  gap: 12px;
+}
+
+.log-ts {
+  color: var(--text-dim);
+}
+
+.log-level {
+  font-weight: 700;
+}
+.log-level.INFO { color: var(--cyan-accent); }
+.log-level.SUCCESS { color: var(--emerald-success); }
+.log-level.SYNC { color: var(--primary); }
+.log-level.WARN { color: var(--amber-warning); }
+
+.log-msg {
+  color: #E2E8F0;
+  word-break: break-all;
+}
